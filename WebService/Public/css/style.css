@@ -1,0 +1,37 @@
+
+.grid
+{
+    display:  table;
+    width:auto;
+    background-color: white;
+    //border:1px solid  #FFFFFF;
+    //border-spacing:5px;
+}
+
+.black {
+	background-color: black; 
+	width: 50px;
+	display: table-cell;
+	border: solid;
+	border-width: thin;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.white {
+	background-color: white; 
+	width: 50px;
+	display: table-cell;
+	border: solid;
+	border-width: thin;
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+.rows {
+	padding-top: 30px;
+	padding-bottom: 30px;
+	height: 120px;
+	display: table-row;
+}
+

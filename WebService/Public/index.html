@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Verita</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+</head>
+
+<body>
+<div class="container">
+<div class="row" align="center">
+<h1>Analyze</h1>
+</div>
+
+<div class="row" align="center">
+  <div class="col-md-6">
+  <textarea rows="12" id="in_a" style="width:100%; font-size:8pt">
+AAAAAAATCACTAAATCAAGTTTTCATCTACCATGGATGGACTGAACTTTTCAGATTGTC
+TTTGTTGTACCATGGCGCCAGAACGATCGCTCTGCGAATACTGTAATACTGTAGTAATGT
+CTTCCATGTTTCTATAACTTTCCTTGGATTTTCCATTGAAACGTGTATAAAGTAAAAAAA
+AATTCTGGAGACCAACAGCAGCCTTTCAGGAGCTTGAGTTCAGAAATATTTTCAGTATCT
+AAAATGTGGCCGGTTCTTGTTTTGTGTGCAAATTTTTTAAAATCAGCTGAAATTGAAAAT
+TTCTTCTGATCGTAAAATAAGTAAAATAAGCGATGGCTTCACTGTTAGAGAAACACGGAG
+AGAACATGTCGTTCTGAAGCATTGCACTTTCTCAAATTCCCATTTCATATGTTTAATGAA
+TTTCCAATACAAATATCATTTAGTGCAATAGTTGATTATCCATAAAACTGCGGCCTAATG
+AGATTGAATGAGGGGTGCTAACCGTCGATCACATTTTATGGTTTTGTTTCTGCCCTATTT
+GAATTTTCATGTAAAACGCACTGCGACACTAGAGGAAAAGACCGGAGAGTGCAGGAAAAG
+CCGCTTTGAATGTCAATTATCCGGCATCCTAATGATACTGTTATTGACTAGTGCTTTTTG
+  </textarea>
+  </div>
+
+  <div class="col-md-6">
+  <textarea rows="12" id="in_b" style="width:100%; font-size:8pt">
+CTCAGTTATCATTTATGTATCACCAAAATGCGTTATCTCATCGGATTTGTGATTGT
+GCTTGTAGCTTACACTGCTTCAGAGTCGTGTGTCGACTCAAGACCATCATGCCCTTCACT
+CAAAAATTACTGTAACGAAGCAGATGTTAGAAGGTAAGGCACATACTTAGAATTGTTCGG
+ATGAAAATGTTGTTTTCTTTTCAGTGGTTGTCGTAAAACCTGTGGTGTCTGCGTTACCGA
+TACTCCATTTGTATGCGAAGACAAGCTCGGTCTCTGCCCAAACTATGTTAGACAATGCCA
+TGATGAAAATATTGCTGA
+  </textarea>
+  </div>
+</div>
+
+
+<div class="row" align="center">
+  Query Length: <input type="number" id="query" min="5" max="100" value="20"/>
+  Min Ratio (%): <input type="number" id="min_ratio" min="10" max="90" value="45"/>
+  Perfect Ratio (%): <input type="number" id="perfect_ratio" min="10" max="90" value="50"/>
+  Max Ratio (%): <input type="number" id="max_ratio" min="10" max="90" value="55"/>
+</div>
+
+<div class="row" align="center">
+  <button type="button" id="analyze">Analyze</button>
+  <button type="button" id="upside_down">Upside down</button>
+</div>
+
+<div class="row" align="center">
+  <div class="col-md-4">
+  Output A
+  </div>
+
+  <div class="col-md-4">
+  Output B
+  </div>
+
+  <div class="col-md-4">
+  Output BT
+  </div>
+</div>
+
+<div class="row" align="center">
+  <div class="col-md-4">
+  <textarea rows="16" id="out_a" style="width:100%; font-size:8pt">
+  A
+  </textarea>
+  </div>
+
+  <div class="col-md-4">
+  <textarea rows="16" id="out_b" style="width:100%; font-size:8pt">
+  B
+  </textarea>
+  </div>
+
+  <div class="col-md-4">
+  <textarea rows="16" id="out_bt" style="width:100%; font-size:8pt">
+  B's upside down
+  </textarea>
+  </div>
+</div>
+
+  
+<script src="js/jquery-1.10.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>
