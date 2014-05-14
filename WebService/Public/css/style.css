@@ -1,37 +1,50 @@
-
-.grid
-{
-    display:  table;
-    width:auto;
-    background-color: white;
-    //border:1px solid  #FFFFFF;
-    //border-spacing:5px;
+html, body,
+div,
+h1,
+table {
+    margin: 0;
+    padding: 0;
 }
 
-.black {
-	background-color: black; 
-	width: 50px;
-	display: table-cell;
-	border: solid;
-	border-width: thin;
-	padding-left: 30px;
-	padding-right: 30px;
+body {
+    font-family: bitter;
+    background: #d9dcdc;
+    color: #2d2d2d;
+    margin: 4em 0 0 0.5em;
 }
 
-.white {
-	background-color: white; 
-	width: 50px;
-	display: table-cell;
-	border: solid;
-	border-width: thin;
-	padding-left: 30px;
-	padding-right: 30px;
+
+.left {
+    position: absolute;
+    width: 8em;
 }
 
-.rows {
-	padding-top: 30px;
-	padding-bottom: 30px;
-	height: 120px;
-	display: table-row;
+.grid {
+    position: absolute;
+    left: 8em;
 }
 
+.grid td {
+    width: 2em;
+    height: 6em;
+    transition: all 0.2s;
+}
+
+.history {
+    display: flex;
+    flex-direction: column;
+}
+
+.history .selected .dark {
+    background: #C91A1A;
+}
+
+
+/* palette */
+.dark {
+    background: #434343;
+}
+
+.light {
+    background: #f5f5f5;
+}
