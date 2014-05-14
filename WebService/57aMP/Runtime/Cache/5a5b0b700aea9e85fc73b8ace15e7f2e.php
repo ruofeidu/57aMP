@@ -77,7 +77,20 @@
 
 <br/>
 
-<div id="slider" style="width:50%"></div>
+<div class="row" id="lblThres">
+<h3>Threshold</h3>
+</div>
+
+<div id="thres"></div>
+
+<br/>
+
+<div class="row" id="lblTimeStamp">
+<h3>Time stamp</h3>
+</div>
+
+<div id="timestamp"></div>
+</div>
 
 </div>
   

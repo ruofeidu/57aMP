@@ -1,4 +1,16 @@
 var grid = function() {
+
+    var lock = false; 
+    var localhost = false; 
+    var word = "11111111111111100001100000101100110";
+    var viz = "10101011010101101010110101011010101";
+    var baseURL = "http://duruofei.com/57aMP/";
+    var localURL = "http://localhost:8888/57aMP/";
+
+    var lastURL = "?last="; 
+    var setURL = "?set="; 
+    var n = 5, m = 7; 
+
     var history_tables = document.querySelectorAll(".history table");
 
     function push_new_grid(matrix) {
@@ -24,7 +36,7 @@ var grid = function() {
         }
 
         // if nothing's selected (anymore), show the latest entry
-        if (document.querySelector(".selected")) {
+        if (!document.querySelector(".selected")) {
             copy_to_grid(history_tables[0].querySelectorAll("td"));
         }
     }
@@ -38,7 +50,27 @@ var grid = function() {
         }
     }
 
+    function updateViz() {
+        if (viz != word) {
+            viz = word;
+            push_new_grid(viz);
+        }
+    }
+
+    function updateData() {
+        if (!lock) {
+            $.ajax({url:(baseURL + lastURL + 1) , success:function(result){
+                    word = result;
+                    lock = false; 
+                }, error: function(XMLHttpRequest, textStatus, errorThrown) { 
+                    lock = false; 
+                }   
+            });
+        }
+    }
+
     var init = function() {
+
         for (var i = 0; i < history_tables.length; i++) {
             var table = history_tables[i];
 
@@ -56,6 +88,16 @@ var grid = function() {
             });
         }
 
+        if (localhost) {
+            baseURL = localURL; 
+        }
+        updateViz(); 
+
+        setInterval(function() {
+            updateData();
+            updateViz(); 
+        }, 500); 
+
         document.querySelector(".grid").addEventListener("click", function() {
             push_new_grid("10101011010101101010110101011010101");
         });
@@ -64,6 +106,11 @@ var grid = function() {
     return {
         init: init
     }
+
 }();
 
-grid.init();
+
+$(document).ready(function() {
+    grid.init();
+});
+

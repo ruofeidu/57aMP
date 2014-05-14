@@ -20,7 +20,11 @@ class IndexAction extends Action {
 		} else
 		if (!empty($_REQUEST["ratio"])) {
 			return $this->ratio($_REQUEST["ratio"]); 
-		} 
+		} else
+		if (!empty($_REQUEST["fire"])) {
+			$this->display("Index:fire");
+			return; 
+		}
 
 		$Grid = M('grid'); 
 		$grids = $Grid->order('time desc')->limit(1)->select(); 
@@ -32,8 +36,8 @@ class IndexAction extends Action {
 	public function last($lastn){
 		$Grid = M('grid'); 
 		$grids = $Grid->order('time desc')->limit($lastn)->select(); 
-		echo( $grids[0]['str'] ); 
-		return strval($grids[$lastn]['str']); 
+		echo( $grids[$lastn-1]['str'] ); 
+		return strval($grids[$lastn-1]['str']); 
 	}
 
 	public function insert($word){
@@ -43,7 +47,7 @@ class IndexAction extends Action {
 			$data['str'] = $word; 
 			$Grid->add($data); 
 			//echo(strval($word)); 
-			return get(); 
+			return $this->get(); 
 		} else {
 		}
 		return $word; 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
     <head>
         <title>57aMP</title>
@@ -346,7 +346,7 @@
             </table>
         </div>
 
-        <script src="__PUBLIC__/js/jquery-2.0.3.min.js"></script>
+        <script src="__PUBLIC__/js/jquery-1.10.2.min.js"></script>
         <script src="__PUBLIC__/js/main.js"></script>
     </body>
 </html>
