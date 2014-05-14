@@ -22,6 +22,11 @@ var grid = function() {
         for (i = 0; i < matrix.length; i++) {
             from_cells[i].className = matrix.charAt(i) === "1" ? "dark" : "";
         }
+
+        // if nothing's selected (anymore), show the latest entry
+        if (document.querySelector(".selected")) {
+            copy_to_grid(history_tables[0].querySelectorAll("td"));
+        }
     }
 
     function copy_to_grid(from) {
@@ -43,6 +48,11 @@ var grid = function() {
                 }
                 this.className = "selected";
                 copy_to_grid(this.querySelectorAll("td"));
+            });
+
+            table.addEventListener("click", function() {
+                this.className = "";
+                copy_to_grid(history_tables[0].querySelectorAll("td"));
             });
         }
 
