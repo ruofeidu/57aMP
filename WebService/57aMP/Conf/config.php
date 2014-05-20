@@ -13,10 +13,10 @@ return array(
 	'URL_CASE_INSENSITIVE'  =>	true,
 
 	'DB_TYPE'				=>	'mysql',
-	'DB_HOST'				=>	'drfex.db.9367747.hostedresource.com',
-	'DB_NAME'				=>	'drfex', 	
-	'DB_USER'				=>	'drfex', 
-	'DB_PWD'				=>	'SXsvai32!',	
+	'DB_HOST'				=>	'',
+	'DB_NAME'				=>	'', 	
+	'DB_USER'				=>	'', 
+	'DB_PWD'				=>	'',	
 	'DB_PORT'				=>	'3306', 
 	'DB_PREFIX'				=>	'tg_',
 );
